@@ -14,7 +14,7 @@ As for my other projects, please feel free to go to [my GitHub page](https://git
 
 I have put together this example up following Jose Portilla's proposed exercise on his ['Python and Django Full Stack Web Developer Bootcamp'](https://www.udemy.com/course/python-and-django-full-stack-web-developer-bootcamp/) Udemy course. Definitely check it out if you want to learn this framework, HTML, CSS, JQuery, Bootstrap and Python basics from scratch.
 
-The gradient rotation effect in some texts and buttons was taken from [Shivam Thapliyal's project](https://codepen.io/thapliyalshivam/details/dvgXVO). Moreover, the custom edition option available when you highlight text inside a TextArea was copied from the [Medium Style Editor project](href="https://github.com/yabwe/medium-editor) made by user "yabwe" in GitHub. Both are impressive additions to any media page, I recommend them at any time.
+The gradient rotation effect in some texts and buttons was taken from [Shivam Thapliyal's project](https://codepen.io/thapliyalshivam/details/dvgXVO). Moreover, the custom edition option available when you highlight text inside a TextArea was copied from the [Medium Style Editor project](https://github.com/yabwe/medium-editor) made by user "yabwe" in GitHub. Both are impressive additions to any media page, I recommend them at any time.
 
 Instructions
 ------------------------------------------
