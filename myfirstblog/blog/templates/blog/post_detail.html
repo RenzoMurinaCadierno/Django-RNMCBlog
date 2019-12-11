@@ -1,0 +1,85 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+  <a> <h1 class='posttitle loader'> {{ post.title }} </h1> </a>
+
+  <!-- If the post is already published, show it -->
+  {% if post.publish_date %}
+
+    <div class="date postdate">
+      {{ post.publish_date }}
+    </div>
+
+  <!-- If it is not published (drafted), give the option to do so -->
+  {% else %}
+
+    <a class='btn btn-default' href="{% url 'post_publish' pk=post.pk %}">
+      Publish
+    </a>
+
+  {% endif %}
+
+  <!-- Safe allows us to escape regex chars. If the post title contains them -->
+  <p class='postcontent'> {{ post.text|safe|linebreaksbr }} </p>
+
+  <!-- Give the user the chance to edit and remove their posts -->
+  {% if user.is_authenticated %}
+
+    <a class='btn btn-primary' href="{% url 'post_edit' pk=post.pk %}">
+      <span class='glyphicon glyphicon-pencil'></span>
+    </a>
+    <a class='btn btn-primary' href="{% url 'post_remove' pk=post.pk %}">
+      <span class='glyphicon glyphicon-remove'></span>
+    </a>
+
+  {% endif %}
+
+  <hr>
+
+  <div class="container">
+
+    <!-- A button to add comments -->
+    <a class='btn btn-primary btn-comment' href="{% url 'add_comment_to_post' pk=post.pk %}">
+      Add a comment
+    </a>
+
+    <!-- For each comment -->
+    {% for comment in post.comments.all %}
+
+      <br>
+
+        {% if user.is_authenticated or comment.approved_comment %}
+
+          <!-- Show the creation date -->
+          <p class='post_meta'> {{ comment.create_date }} </p>
+
+          <!-- If the comment is not approved, let them remove/approve it -->
+          {% if not comment.approved_comment %}
+
+            <a class='btn btn-default' href="{% url 'comment_remove' pk=comment.pk %}">
+              <span class='glyphicon glyphicon-remove'></span>
+            </a>
+            <a class='btn btn-primary' href="{% url 'comment_approve' pk=comment.pk %}">
+              <span class='glyphicon glyphicon-ok'></span>
+            </a>
+
+          {% endif %}
+
+          <!-- Show the text of the comment and who posted it -->
+          <p> {{ comment.text|safe|linebreaks }}</p>
+
+          <p class='post_meta'> Posted by {{ comment.author }} </p>
+
+        {% endif %}
+
+        <!-- If no comments were to be shown in the for loop -->
+        {% empty %}
+
+        <p> No comments to show.</p>
+
+    {% endfor %}
+
+  </div>
+
+{% endblock %}

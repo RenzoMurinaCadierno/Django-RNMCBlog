@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+  {% for post in posts %}
+
+    <div class="post">
+
+      <!-- Show the creation date -->
+      <p class='date'>
+        Created: {{ post.create_date|date:'d-m-Y' }}
+      </p>
+
+      <!-- Show the title according to its passed pk as ID -->
+      <h1>
+        <a href="{% url 'post_detail' pk=post.pk %}">
+          {{ post.title }}
+        </a>
+      </h1>
+
+      <!-- Show up to 200 chars of its body text -->
+      <p> {{ post.text|truncatechars:200 }}</p>
+
+    </div>
+
+  {% endfor %}
+
+{% endblock %}

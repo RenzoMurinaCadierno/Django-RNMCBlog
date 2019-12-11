@@ -1,0 +1,62 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+  <div class="text-center">
+
+    <h5><a class='post-detail-name'> Welcome to RNMC Blog!</a></h5>
+
+    <h5><em><a class='postcontent about-meta'> A back-end blog app practice project</a></em></h5>
+
+  </div>
+
+  <div class="text-justify">
+
+    <h3 class='about-content'> Overview </h3>
+
+    <div class="about-text">
+
+      <p> The idea behind this project is to let users comment on blog posts only I create, what would basically be the foundation of one-way blogging pages like Wordpress. </p>
+
+      <p> As an admin, the site gives me the chance to create blog posts delete and edit them, as well as revising user comments before they are published to emulate a 'moderator' role. This site's whole functionality is handled by Class-based views using Django framework. Since my aim here is to work at wiring the back-end, the front-end is a bit too basic. It was made with Bootstrap 3 and some custom CSS. </p>
+
+      <p> As for my other projects, please feel free to go to <a class='about-content' href="https://github.com/RenzoMurinaCadierno">my GitHub page</a> to check them out. I am still on my learning tracks, so you will see new projects frequently. I specialize in Python and Javascript, and whatever I upload is normally related to web, game and app developing, or Python scripting for multiple purposes. </p>
+
+      <p> I have put together this example up following Jose Portilla's proposed exercise on his <a href="https://www.udemy.com/course/python-and-django-full-stack-web-developer-bootcamp/">'Python and Django Full Stack Web Developer Bootcamp'</a> Udemy course. Definitely check it out if you want to learn this framework, HTML, CSS, JQuery, Bootstrap and Python basics from scratch. </p>
+
+      <p> The gradient rotation effect in some texts and buttons was taken from <a href="https://codepen.io/thapliyalshivam/details/dvgXVO">Shivam Thapliyal's project</a>. Moreover, the custom edition option available when you highlight text inside a TextArea was copied from the <a href="https://github.com/yabwe/medium-editor">Medium Style Editor project</a> made by user "yabwe" in GitHub. Both are impressive additions to any media page, I recommend them at any time. </p>
+
+    </div>
+
+    <h3 class='about-content'> Instructions </h3>
+
+    <div class="about-text">
+
+      <p> Nothing new other than what you basically do in a blog app, pretty much intuitive.
+
+      <p> As a <strong>user</strong>, you can: </p>
+
+      <ul>
+
+        <li> Navigate to each Post by clicking on their names on the main page. You will be redirected to the post page, where you can check the content and comments out. </li>
+        <li> On a post page there is a button to add a comment which will allow you to type a comment in a fully customizable text-box. Note that your comment will NOT be published instantly, since the Admin has to approve it first. </li>
+
+      </ul>
+
+      <p> As an <strong>Admin</strong>, you can: </p>
+
+      <ul>
+
+        <li> Create a post using the "New Post" option in the navbar. </li>
+        <li> Once the post is created, it will fall in the "Drafts" storage page before being published. You can edit or delete it if you desire, or publish it for it to appear visible to all visitors.</li>
+        <li> Edit or delete posts that are already published, by visiting the post's page and using the provided icons. </li>
+        <li> Accept or delete users' posts before they are visible to everyone, on the same fashion explained on the last bullet.</li>
+
+      </ul>
+    </div>
+
+    <h4 class='about-content text-center'> Thank you for reading and for taking your time to check this project out!</h4>
+
+  </div>
+
+{% endblock %}

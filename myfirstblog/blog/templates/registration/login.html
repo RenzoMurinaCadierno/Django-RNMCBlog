@@ -1,0 +1,35 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+  <div class="jumbotron">
+
+    <h2>Admin login</h2>
+    <h5>This is not a public blog, only the owner can sign up and log in to create, edit or delete posts and comments.</h5>
+    <h5>But hey, you can try my practice project of a <a href="https://rnmcsocial.herokuapp.com/"><strong>blogging social network</strong></a> to manage your own!</h5>
+
+    <br>
+
+    {% if form.errors %}
+
+      <p>Username and password are incorrect.</p>
+
+    {% endif %}
+
+    <form action="{% url 'login' %}" method="post">
+
+      {% csrf_token %}
+
+      {{ form.as_p }}
+
+      <input type="submit" class="btn btn-primary" value="Login">
+
+      <!-- views.login supplies the 'next' value to know what to do -->
+      <!-- with that field once the form is submitted and logged in -->
+      <input type="hidden" name="next" value="{{next}}">
+
+    </form>
+
+  </div>
+
+{% endblock %}
