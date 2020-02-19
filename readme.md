@@ -1,4 +1,4 @@
-RNMC Social
+RNMC Blog
 ========================================
 
 Overview
